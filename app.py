@@ -9,6 +9,7 @@ from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.layers import Embedding, LSTM
 from tensorflow.keras.models import Sequential
 from keras.losses import mean_squared_error
+import os
 app = Flask(__name__)
 
 # Load the model, but specify the loss manually
@@ -165,7 +166,9 @@ def predict():
         'rating': predicted_question_rating
     })
 
-if __name__ == '__main__':
-    app.run(debug=True)
+#if __name__ == '__main__':
+#    app.run(debug=True)
 
+#if __name__ == '__main__':
+#    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8000)), debug=True)  # Ensure you import os
 
